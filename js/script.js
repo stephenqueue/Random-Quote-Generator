@@ -1,4 +1,5 @@
 //global variables
+var message;
 
 //quotes array
 var quotes = [
@@ -46,12 +47,15 @@ var quotes = [
 ]; //end of quotes array
 
 //selects a random quote from the array and returns arandomly selected quote object
-function getRandomQuote(quotes) {
+function getRandomQuote() {
   return quotes[Math.floor(Math.random() * quotes.length)];
 }
-console.log(getRandomQuote(quotes));
+console.log(getRandomQuote());
 
+//printQuote calls getRandomQuote function
 function printQuote() {
+  var newQuote = getRandomQuote();
+
 
 }
 
