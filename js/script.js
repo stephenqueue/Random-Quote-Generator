@@ -40,12 +40,12 @@ var quotes = [
     quote: "Failure Will Never Overtake Me If My Determination To Succeed Is Strong Enough.",
     source: "Og Mandino",
     citation: "Publication",
-    year: "Unknown"
+    year: "1980"
   },
   {
     quote: "If you don’t make the time to work on creating the life you want, you’re eventually going to be forced to spend a LOT of time dealing with a life you DON’T want.",
     source: "Kevin Ngo",
-    citation: "Book",
+    citation: "Publication",
     year: "2013"
   },
   {
@@ -79,7 +79,9 @@ function printQuote() {
 
   //for in loop to iterate through each object in the array
   for (var i = 0; i < quotes.length; i++) {
-
+    if (print.citation === "Unknown" || print.year === "Unknown") {
+      break;
+    }
     //displays final HTML string to the page
     document.getElementById('quote-box').innerHTML =
     '<p class = "quote">' + print.quote + '</p>'+
@@ -87,10 +89,6 @@ function printQuote() {
     '<span class = "citation">' + print.citation + '</span>'+
     '<span class = "year">' + print.year + '</span>';
 
-    if (print.citation === "Unknown" || print.year === "Unknown") {
-      break;
-
-    } //end of conditional statement
   } //end for loop
 } // end printQuote function
 
