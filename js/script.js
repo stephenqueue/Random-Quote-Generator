@@ -63,6 +63,10 @@ var quotes = [
 
 ]; //end of quotes array
 
+//Global Variables
+var message = '';
+var quoteLoop;
+
 //selects a random quote from the array and returns a value
 function getRandomQuote() {
   return quotes[Math.floor(Math.random() * quotes.length)];
@@ -73,21 +77,16 @@ console.log(getRandomQuote());
 function printQuote() {
   var newQuote = getRandomQuote();
 
-  //for loop to iterate throguh each object in quotes array 
-
+  //for in loop to iterate throguh each object in the array
   for (var i = 0; i < quotes.length; i++) {
-
     //construct HTML string to print to the page
-    var message = '<p>' + quotes[quote] + '</p>';
-    message += '<p>' + quotes[source] + '</p>';
-    message += '<p>' + quotes[citation] + '</p>';
-    message += '<p>' + quotes[year]+ '</p>';
+  quoteLoop = quotes[i];
+    message += '<p>' + quotes.quote + '</p>';
+    message += '<p>' + quotes.source + '</p>';
+    message += '<p>' + quotes.citation + '</p>';
+    message += '<p>' + quotes.year + '</p>';
   }
-
 } // end printQuote function
-
-
-
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
