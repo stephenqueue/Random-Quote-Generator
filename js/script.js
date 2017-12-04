@@ -1,15 +1,17 @@
-//selects a random quote from the array and returns arandomly selected quote object
+//selects a random quote from the array and returns a value
 function getRandomQuote() {
   return quotes[Math.floor(Math.random() * quotes.length)];
 }
-console.log(getRandomQuote() );
+
+console.log(getRandomQuote());
 
 //printQuote calls getRandomQuote function
 function printQuote() {
   var newQuote = getRandomQuote();
-
-
-
+  // var message = '<p>' + quotes.quote + '</p>';
+  // message += '<p>' + quotes.source + '</p>';
+  // message += '<p>' + quotes.citation + '</p>';
+  // message += '<p>' + quotes.year + '</p>';
 }
 
 //quotes array
