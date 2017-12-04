@@ -65,7 +65,7 @@ var quotes = [
 
 //Global Variables
 var message = '';
-var quoteLoop;
+var quotesLoop;
 
 //selects a random quote from the array and returns a value
 function getRandomQuote() {
@@ -80,12 +80,15 @@ function printQuote() {
   //for in loop to iterate throguh each object in the array
   for (var i = 0; i < quotes.length; i++) {
     //construct HTML string to print to the page
-  quoteLoop = quotes[i];
+    quotesLoop = quotes[i];
     message += '<p>' + quotes.quote + '</p>';
     message += '<p>' + quotes.source + '</p>';
     message += '<p>' + quotes.citation + '</p>';
     message += '<p>' + quotes.year + '</p>';
-  }
+    if(quotes.citation === "" || quotes.year === "") {
+      break;
+    }
+  } //end for loop
 } // end printQuote function
 
 // event listener to respond to "Show another quote" button clicks
