@@ -63,6 +63,10 @@ var quotes = [
 
 ]; //end of quotes array
 
+//Global Variables
+var print;
+var quotesLoop;
+
 //selects a random quote from the array and returns a value
 function getRandomQuote() {
   return quotes[Math.floor(Math.random() * quotes.length)];
@@ -71,22 +75,22 @@ console.log(getRandomQuote());
 
 //printQuote calls getRandomQuote function and stoes in variable
 function printQuote() {
-  var print = getRandomQuote();
+  print = getRandomQuote();
   console.log(print);
 
-  //for in loop to iterate throguh each object in the array
+//for in loop to iterate through each object in the array
   for (var i = 0; i < quotes.length; i++) {
-    //construct HTML string to print to the page
     var quotesLoop = quotes[i];
-    //displays final HTML string to the page
+
+//displays final HTML string to the page
     document.getElementById('quote-box').innerHTML =
     '<p class = "quote">' + print.quote + '</p>'+
     '<p class = "source">' + print.source + '</p>'+
     '<span class = "citation">' + print.citation + '</span>'+
     '<span class = "year">' + print.year + '</span>';
-    if(quotes.citation === "" || quotes.year === "") {
+    if(print.citation === "" || print.year === "") {
       break;
-    }
+    } //end of conditional statement
   } //end for loop
 } // end printQuote function
 
