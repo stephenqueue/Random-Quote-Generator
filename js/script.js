@@ -1,19 +1,3 @@
-//selects a random quote from the array and returns a value
-function getRandomQuote() {
-  return quotes[Math.floor(Math.random() * quotes.length)];
-}
-
-console.log(getRandomQuote());
-
-//printQuote calls getRandomQuote function
-function printQuote() {
-  var newQuote = getRandomQuote();
-  // var message = '<p>' + quotes.quote + '</p>';
-  // message += '<p>' + quotes.source + '</p>';
-  // message += '<p>' + quotes.citation + '</p>';
-  // message += '<p>' + quotes.year + '</p>';
-}
-
 //quotes array
 var quotes = [
   {
@@ -78,6 +62,31 @@ var quotes = [
   },
 
 ]; //end of quotes array
+
+//selects a random quote from the array and returns a value
+function getRandomQuote() {
+  return quotes[Math.floor(Math.random() * quotes.length)];
+}
+console.log(getRandomQuote());
+
+//printQuote calls getRandomQuote function and stoes in variable
+function printQuote() {
+  var newQuote = getRandomQuote();
+
+  //for loop to iterate throguh each object in quotes array 
+
+  for (var i = 0; i < quotes.length; i++) {
+
+    //construct HTML string to print to the page
+    var message = '<p>' + quotes[quote] + '</p>';
+    message += '<p>' + quotes[source] + '</p>';
+    message += '<p>' + quotes[citation] + '</p>';
+    message += '<p>' + quotes[year]+ '</p>';
+  }
+
+} // end printQuote function
+
+
 
 
 // event listener to respond to "Show another quote" button clicks
