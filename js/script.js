@@ -4,7 +4,7 @@ var quotes = [
     quote: "The Way To Get Started Is To Quit Talking And Begin Doing.",
     source: "Walt Disney",
     citation: "Publication",
-    year: 1950
+    year: 1940
   },
   {
     quote: "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.",
@@ -40,7 +40,7 @@ var quotes = [
     quote: "Failure Will Never Overtake Me If My Determination To Succeed Is Strong Enough.",
     source: "Og Mandino",
     citation: "Publication",
-    year: 1950
+    year: 1920
   },
   {
     quote: "If you don’t make the time to work on creating the life you want, you’re eventually going to be forced to spend a LOT of time dealing with a life you DON’T want.",
@@ -77,7 +77,7 @@ function printQuote() {
   print = getRandomQuote();
   console.log(print);
 
-  //for in loop to iterate through each object in the array
+  //for loop to iterate through each object in the array
   for (var i = 0; i < quotes.length; i++) {
     if (print.citation === "Unknown" || print.year === "Unknown") {
       break;
