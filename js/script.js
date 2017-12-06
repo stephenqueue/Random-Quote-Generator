@@ -9,8 +9,6 @@ var quotes = [
   {
     quote: "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.",
     source: "Winston Churchill",
-    citation: "Unknown",
-    year: "Unknown"
   },
   {
     quote: "Don’t Let Yesterday Take Up Too Much Of Today.",
@@ -20,9 +18,7 @@ var quotes = [
   },
   {
     quote: "You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.",
-    source: "Unknown",
-    citation: "Unknown",
-    year: "Unknown"
+    source: "Nelson Mandela",
   },
   {
     quote: "If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.",
@@ -63,8 +59,8 @@ var quotes = [
 
 ]; //end of quotes array
 
-//Global Variables
-var print;
+//global variables
+var html;
 
 //selects a random quote from the array and returns a value
 function getRandomQuote() {
@@ -74,7 +70,7 @@ console.log(getRandomQuote());
 
 //printQuote calls getRandomQuote function and stoes in variable
 function printQuote() {
-  print = getRandomQuote();
+  var print = getRandomQuote();
   console.log(print);
 
   //for loop to iterate through each object in the array
