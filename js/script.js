@@ -77,11 +77,10 @@ function printQuote() {
   //setting up variable to construct an HTML string
   var html;
   //displays final HTML string to the page
-  html += '<p class = "quote">' + print.quote + '</p>' +
-  '<p class = "source">' + print.source +
-  '<span class = "citation"> ' + print.citation + '</span>' +
-  '<span class = "year"> ' + print.year + '</span>' +
-  '</p>';
+  html += '<p class = "quote">' + print.quote + '</p>';
+  html += '<p class = "source">' + print.source + '</p>';
+  html += '<span class = "citation">' + print.citation + '</span>';
+  html += '<span class = "year">' + print.year + '</span>';
 
   document.getElementById('quote-box').innerHTML = html;
 
