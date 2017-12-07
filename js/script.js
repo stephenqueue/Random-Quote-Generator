@@ -9,6 +9,8 @@ var quotes = [
   {
     quote: "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.",
     source: "Winston Churchill",
+    citation: "",
+    year: ""
   },
   {
     quote: "Don’t Let Yesterday Take Up Too Much Of Today.",
@@ -19,6 +21,8 @@ var quotes = [
   {
     quote: "You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.",
     source: "Nelson Mandela",
+    citation: "",
+    year: ""
   },
   {
     quote: "If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.",
@@ -59,35 +63,29 @@ var quotes = [
 
 ]; //end of quotes array
 
-//global variables
-var html;
-
 //selects a random quote from the array and returns a value
 function getRandomQuote() {
   return quotes[Math.floor(Math.random() * quotes.length)];
 }
 console.log(getRandomQuote());
 
-//printQuote calls getRandomQuote function and stoes in variable
+//printQuote function
 function printQuote() {
+
+  //call getRandomQuote function and store inside variable
   var print = getRandomQuote();
-  console.log(print);
+  //setting up variable to construct an HTML string
+  var html;
+  //displays final HTML string to the page
+  html += '<p class = "quote">' + print.quote + '</p>' +
+  '<p class = "source">' + print.source +
+  '<span class = "citation"> ' + print.citation + '</span>' +
+  '<span class = "year"> ' + print.year + '</span>' +
+  '</p>';
 
-  //for loop to iterate through each object in the array
-  for (var i = 0; i < quotes.length; i++) {
-    if (print.citation === "Unknown" || print.year === "Unknown") {
-      break;
-    }
-    //displays final HTML string to the page
-    document.getElementById('quote-box').innerHTML =
-    '<p class = "quote">' + print.quote + '</p>'+
-    '<p class = "source">' + print.source + '</p>'+
-    '<span class = "citation">' + print.citation + '</span>'+
-    '<span class = "year">' + print.year + '</span>';
+  document.getElementById('quote-box').innerHTML = html;
 
-  } //end for loop
 } // end printQuote function
-
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
